@@ -35,7 +35,7 @@ public class Department extends Contact {
     public Response creat(String name, String parentid) {
         reset();
         String body = JsonPath.parse(this.getClass()
-                .getResourceAsStream("/Data/creat.json"))
+                .getResourceAsStream("/com/testhome/hogwarts/wework/contact/department/creat.json"))
                 .set("$.name", name)
                 .set("$.parentid", parentid).jsonString();
         return requestSpecification
@@ -53,7 +53,7 @@ public class Department extends Contact {
     public Response creat(HashMap<String, Object> map) {
         reset();
         DocumentContext documentContext = JsonPath.parse(this.getClass()
-                .getResourceAsStream("/Data/creat.json"));
+                .getResourceAsStream("/com/testhome/hogwarts/wework/contact/department/creat.json"));
         map.entrySet().forEach(entry -> {
             documentContext.set(entry.getKey(), entry.getValue());
         });
@@ -74,7 +74,7 @@ public class Department extends Contact {
     public Response update(String id, String name) {
         reset();
         String body = JsonPath.parse(this.getClass()
-                .getResourceAsStream("/Data/creat.json"))
+                .getResourceAsStream("/com/testhome/hogwarts/wework/contact/department/creat.json"))
                 .set("$.name", name)
                 .set("$.id", id).jsonString();
         return requestSpecification
